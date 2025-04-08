@@ -7,19 +7,48 @@
     @vite(['resources/sass/app.scss', "resources/js/app.js"])
 </head>
 <body>
-    <div class="container">
+
+    <header></header>
+
+    <div class="container my-5">
 
         <h1>Treni</h1>
-        @foreach ($trains as $train)
-            <div class="d-flex align-items-center justify-content-between border-bottom mb-3">
-                <strong>Treno:</strong> {{ $train->azienda }}<br>
-                <strong>Partenza:</strong> {{ $train->stazione_di_partenza }}<br>
-                <strong>Arrivo:</strong> {{ $train->stazione_di_arrivo }}<br>
-                <strong>Orario di partenza:</strong> {{ $train->orario_di_partenza }}<br>
-                <strong>Codice treno:</strong> {{ $train->codice_treno }}<br>
-            </div>
-    
-        @endforeach
+    </div>
+    <div>
+
+    <table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Treno</th>
+            <th scope="col">Psrtenza</th>
+            <th scope="col">Arrivo</th>
+            <th scope="col">Orario di partenza</th>
+            <th scope="col">Orario di arrivo</th>
+            <th scope="col">Numero carrozze</th>
+            <th scope="col">In orario</th>
+            <th scope="col">Cancellato</th>
+            <th scope="col">Codice treno</th>
+        </tr>
+  </thead>
+  @foreach ($trains as $train)
+  <tbody>
+    <tr>
+      <td>{{ $train->azienda }}</td>
+      <td>{{ $train->stazione_di_partenza }}</td>
+      <td>{{ $train->stazione_di_arrivo }}</td>
+      <td>{{ $train->orario_di_partenza }}</td>
+      <td>{{ $train->orario_di_arrivo }}</td>
+      <td>{{ $train->totale_carrozze }}</td>
+      <td>{{ $train->in_orario ? 'Sì' : 'No' }}</td>
+      <td>{{ $train->cancellato ? 'Sì' : 'No' }}</td>
+      <td>{{ $train->codice_treno }}</td>
+    </tr>
+
+  </tbody>
+  @endforeach
+</table>
+        
+
     </div>
 
 
