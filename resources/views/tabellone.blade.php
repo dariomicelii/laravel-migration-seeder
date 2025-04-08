@@ -8,19 +8,20 @@
 </head>
 <body>
 
+
     <header></header>
 
     <div class="container my-5">
 
-        <h1>Treni</h1>
+        <h1 class="text-light">Treni</h1>
     </div>
     <div>
 
-    <table class="table">
+    <table class="table table-dark">
     <thead>
         <tr>
             <th scope="col">Treno</th>
-            <th scope="col">Psrtenza</th>
+            <th scope="col">Partenza</th>
             <th scope="col">Arrivo</th>
             <th scope="col">Orario di partenza</th>
             <th scope="col">Orario di arrivo</th>
@@ -33,15 +34,15 @@
   @foreach ($trains as $train)
   <tbody>
     <tr>
-      <td>{{ $train->azienda }}</td>
-      <td>{{ $train->stazione_di_partenza }}</td>
-      <td>{{ $train->stazione_di_arrivo }}</td>
-      <td>{{ $train->orario_di_partenza }}</td>
-      <td>{{ $train->orario_di_arrivo }}</td>
-      <td>{{ $train->totale_carrozze }}</td>
-      <td>{{ $train->in_orario ? 'Sì' : 'No' }}</td>
-      <td>{{ $train->cancellato ? 'Sì' : 'No' }}</td>
-      <td>{{ $train->codice_treno }}</td>
+      <td class="text-warning">{{ $train->azienda }}</td>
+      <td class="text-warning">{{ $train->stazione_di_partenza }}</td>
+      <td class="text-warning">{{ $train->stazione_di_arrivo }}</td>
+      <td class="text-warning">{{ $train->orario_di_partenza }}</td>
+      <td class="text-warning">{{ $train->orario_di_arrivo }}</td>
+      <td class="text-warning">{{ $train->totale_carrozze }}</td>
+      <td class="text-warning">{{ $train->in_orario ? 'Sì' : 'No' }}</td>
+      <td class="text-warning">{{ $train->cancellato ? 'Sì' : 'No' }}</td>
+      <td class="text-warning">{{ $train->codice_treno }}</td>
     </tr>
 
   </tbody>
